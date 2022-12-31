@@ -1,16 +1,27 @@
+CC = gcc
+CFLAG = -o
+
+christmas_path = ChristmasTree/main.c 
+fibo_path = RecursiveFibonacci/main.c 
+piramid_path = RecursivePiramid/main.c 
+
+christmas_out = christmas.out
+fibo_out = fibo.out
+piramid_out = piramid.out
+
 three:
-	gcc -o christmas.out ChristmasTree/main.c 
+	${CC} ${CFLAG} ${christmas_out} ${christmas_path} 
 
 fibo:
-	gcc -o fibo.out RecursiveFibonacci/main.c 
+	${CC} ${CFLAG} ${fibo_out} ${fibo_path}
 
 piramid:
-	gcc -o piramid.out RecursivePiramid/main.c 
+	${CC} ${CFLAG} ${piramid_out} ${piramid_path} 
 
 clean:
 	rm *.out
 
 all:
-	gcc -o christmas.out ChristmasTree/main.c &&\
-	gcc -o fibo.out RecursiveFibonacci/main.c &&\
-	gcc -o piramid.out RecursivePiramid/main.c\
+	${CC} ${CFLAG} ${christmas_out} ${christmas_path} &&\
+	${CC} ${CFLAG} ${fibo_out} ${fibo_path} &&\
+	${CC} ${CFLAG} ${piramid_out} ${piramid_path}\
